@@ -1,0 +1,17 @@
+language: python
+
+python:
+  - "3.9"
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - python setup.py test
+
+deploy:
+  provider: github-pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: main
